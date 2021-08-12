@@ -36,7 +36,6 @@ public class GamblerSimulator {
 		}
 		while(start_stake > 50 && start_stake < 150);
 		
-//		System.out.println("Current Stakes "+temp_stake);
 		
 
 	}
