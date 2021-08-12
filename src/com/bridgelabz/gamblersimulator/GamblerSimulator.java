@@ -30,9 +30,10 @@ public class GamblerSimulator {
 			{
 				loss+=50;
 			}
-				System.out.println(wins+ " Total Amount Won");
-				System.out.println(loss+ " Total Amount Lost");
+				System.out.println(wins+ " Amount Won");
+				System.out.println(loss+ " Amount Lost");
 		}
+		
 		
 	}
 	
