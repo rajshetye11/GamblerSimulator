@@ -1,5 +1,6 @@
 package com.bridgelabz.gamblersimulator;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class GamblerSimulator {
@@ -9,6 +10,8 @@ public class GamblerSimulator {
 	int goal=150;
 	int max_loss=50;
 	int days = 30,wins=0,loss=0;
+	int day_won[] = new int[30];
+	int day_lost[] = new int[30];
 	
 	public void winOrLoss() 
 	{	
@@ -26,13 +29,18 @@ public class GamblerSimulator {
 			if(temp == goal)
 			{
 				wins+=50;
+				day_won[i]=i;
+				
 			}else
 			{
 				loss+=50;
+				day_lost[i]=i;;
 			}
 		}
 		System.out.println(wins+ " Total Amount Won in Month");
 		System.out.println(loss+ " Total Amount Lost in Month");
+		System.out.println("Won maximum amount on day "+Arrays.toString(day_won));
+		System.out.println("Lost maximum amount on day "+Arrays.toString(day_lost));
 		
 	}
 	
