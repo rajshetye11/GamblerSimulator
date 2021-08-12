@@ -8,24 +8,32 @@ public class GamblerSimulator {
 	public static int bet_per_game = 1;
 	int goal=150;
 	int max_loss=50;
+	int days = 20,wins=0,loss=0;
 	
-	public void winOrLoss() {
-		Random random = new Random();
-		
-		while(start_stake > max_loss && start_stake < goal) {
-			int option = random.nextInt(2);
-			if(option==0)
+	public void winOrLoss() 
+	{	
+		for(int i=0; i<days; i++)
+		{
+			int temp = start_stake;
+			while(temp > max_loss && temp < goal)
 			{
-				System.out.println("Won the Game");
-				start_stake+= 1;
-				System.out.println("Current Stakes "+start_stake);
+				if(Math.random()<0.5)
+					temp++;
+				else
+					temp--;
+			}
+			System.out.println("Current Stake  "+temp+ " on day "+(i+1));
+			if(temp == goal)
+			{
+				wins+=50;
 			}else
 			{
-				System.out.println("Lost the Game");
-				start_stake-=1;
-				System.out.println("Current Stakes "+start_stake);
+				loss+=50;
 			}
-		}	
+				System.out.println(wins+ " Total Amount Won");
+				System.out.println(loss+ " Total Amount Lost");
+		}
+		
 	}
 	
 	public static void main(String[] args) {
