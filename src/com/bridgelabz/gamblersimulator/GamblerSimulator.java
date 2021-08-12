@@ -9,7 +9,7 @@ public class GamblerSimulator {
 	public static int bet_per_game = 1;
 	int goal=150;
 	int max_loss=50;
-	int days = 30,wins=0,loss=0;
+	int days = 30,wins=0,loss=0,win_per;
 	int day_won[] = new int[30];
 	int day_lost[] = new int[30];
 	
@@ -30,6 +30,7 @@ public class GamblerSimulator {
 			{
 				wins+=50;
 				day_won[i]=i;
+				win_per++;
 				
 			}else
 			{
@@ -41,6 +42,11 @@ public class GamblerSimulator {
 		System.out.println(loss+ " Total Amount Lost in Month");
 		System.out.println("Won maximum amount on day "+Arrays.toString(day_won));
 		System.out.println("Lost maximum amount on day "+Arrays.toString(day_lost));
+		System.out.println("Percent of games won = " + 100.0 * win_per / days);
+		if(100.0 * win_per / days > 50)
+			System.out.println("Gained Profit of "+wins+" will also Play on Next Month");
+		else
+			System.out.println("Lost "+loss+" so will not Play on Next Month");
 		
 	}
 	
