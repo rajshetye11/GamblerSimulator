@@ -8,7 +8,7 @@ public class GamblerSimulator {
 	public static int bet_per_game = 1;
 	int goal=150;
 	int max_loss=50;
-	int days = 20,wins=0,loss=0;
+	int days = 30,wins=0,loss=0;
 	
 	public void winOrLoss() 
 	{	
@@ -30,10 +30,9 @@ public class GamblerSimulator {
 			{
 				loss+=50;
 			}
-				System.out.println(wins+ " Amount Won");
-				System.out.println(loss+ " Amount Lost");
 		}
-		
+		System.out.println(wins+ " Total Amount Won in Month");
+		System.out.println(loss+ " Total Amount Lost in Month");
 		
 	}
 	
